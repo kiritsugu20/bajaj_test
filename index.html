@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Listing Page</title>
+    <link rel="stylesheet" href="doctor_listing.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    id="doctor-search" 
+                    placeholder="Search for doctors by name..." 
+                    class="search-input" 
+                    data-testid="autocomplete-input"
+                >
+                <div class="suggestions" id="suggestions-container"></div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="filter-panel">
+               
+                <div class="filter-section">
+                    <div class="filter-header" data-testid="filter-header-moc">
+                        <span>Consultation Mode</span>
+                    </div>
+                    <div class="filter-body">
+                        <div class="filter-option">
+                            <input type="radio" id="video-consult" name="consultType" value="video" data-testid="filter-video-consult">
+                            <label for="video-consult">Video Consult</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="radio" id="in-clinic" name="consultType" value="clinic" data-testid="filter-in-clinic">
+                            <label for="in-clinic">In Clinic</label>
+                        </div>
+                    </div>
+                </div>
+                
+              
+                <div class="filter-section">
+                    <div class="filter-header" data-testid="filter-header-speciality">
+                        <span>Speciality</span>
+                    </div>
+                    <div class="filter-body" id="specialties-container">
+                        
+                    </div>
+                </div>
+                
+               
+                <div class="filter-section">
+                    <div class="filter-header" data-testid="filter-header-sort">
+                        <span>Sort By</span>
+                    </div>
+                    <div class="filter-body">
+                        <div class="filter-option">
+                            <input type="radio" id="sort-fees" name="sortOption" value="fees" data-testid="sort-fees">
+                            <label for="sort-fees">Fees (Low to High)</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="radio" id="sort-experience" name="sortOption" value="experience" data-testid="sort-experience">
+                            <label for="sort-experience">Experience (High to Low)</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="doctor-list" id="doctor-list">
+                <div class="loading" id="loading-indicator">Loading doctors...</div>
+                <div class="error" id="error-message" style="display: none;"></div>
+                <div class="no-results" id="no-results" style="display: none;">No doctors found matching your criteria.</div>
+            </div>
+        </div>
+    </div>
+<script src="doctor_listing.js"></script>
+</body>
+</html>
